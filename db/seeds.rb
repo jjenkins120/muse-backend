@@ -9,9 +9,7 @@
 puts "Destroying existing seeds"
 
 Follow.destroy_all
-PostTag.destroy_all
 UserPost.destroy_all
-Tag.destroy_all
 Post.destroy_all
 User.destroy_all
 
@@ -72,16 +70,6 @@ puts "Seeding Posts w/ posts"
     )
 end
 
-puts "Seeding Tags"
-
-tags = ['beautiful', 'dark', 'bright', 'interesting', 'creative', 'deep', 'lovely']
-
-10.times do
-    Tag.create(
-        name: tags.sample
-    )
-end
-
 puts "Seeding Follows"
 
 10.times do 
@@ -97,15 +85,6 @@ puts "Seeding User_posts"
 UserPost.create(
     post_id: Post.all.sample.id,
     user_id: User.all.sample.id,
-)
-end
-
-puts "Seeding Post_tags "
-
-10.times do 
-PostTag.create(
-    post_id: Post.all.sample.id,
-    tag_id: Tag.all.sample.id,
 )
 end
 
