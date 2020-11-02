@@ -19,7 +19,7 @@ puts "Seeding Data"
 
 puts "Seeding Users"
 
-10.times do
+2.times do
     User.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
@@ -47,7 +47,7 @@ puts "Seeding Posts w/o posts"
 
 cate_arr = ['video', 'audio', 'image', 'writing']
 
-10.times do
+5.times do
     Post.create(
         title: Faker::App.name,
         description: Faker::Lorem.sentence,
@@ -60,7 +60,7 @@ end
 
 puts "Seeding Posts w/ posts"
 # with post ids
-10.times do
+5.times do
     Post.create(
         title: Faker::App.name,
         description: Faker::Lorem.sentence,
