@@ -41,6 +41,17 @@ User.create(
     image_url: Faker::LoremFlickr.colorized_image
 )
 
+User.create(
+    first_name: 'Bob',
+    last_name: 'Roberts',
+    username: 'legitbob',
+    password: '123',
+    email: 'bobroberts@example.com',
+    bio: Faker::Lorem.paragraph,
+    location: Faker::Address.city,
+    image_url: Faker::LoremFlickr.colorized_image
+)
+
 puts "Seeding Posts w/o posts"
 
 cate_arr = ['video', 'audio', 'image', 'writing']
