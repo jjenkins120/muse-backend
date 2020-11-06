@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'rest-client'
+
+   
 puts "Destroying existing seeds"
 
 Follow.destroy_all
@@ -54,16 +57,18 @@ User.create(
 
 puts "Seeding Posts w/o posts"
 
-cate_arr = ['video', 'audio', 'image', 'writing']
+cate_arr = ['Video', 'Audio', 'Image', 'Writing']
 
 5.times do
     Post.create(
         title: Faker::App.name,
         description: Faker::Lorem.sentence,
-        link_url: Faker::Internet.url,
+        # link_url: Faker::Internet.url,
+        link_url: 'https://www.youtube.com/watch?v=66GAqh9B8ac',
         user_id: User.all.sample.id,
         likes: rand(1..100), 
-        category: cate_arr.sample
+        category: "Video"
+        # category: cate_arr.sample
     )
 end
 
@@ -73,11 +78,27 @@ puts "Seeding Posts w/ posts"
     Post.create(
         title: Faker::App.name,
         description: Faker::Lorem.sentence,
-        link_url: Faker::Internet.url,
+        # link_url: Faker::Internet.url,
+        link_url: Faker::Avatar.image,
         user_id: User.all.sample.id,
         post_id: Post.all.sample.id, 
         likes: rand(1..100),
-        category: cate_arr.sample
+        category: "Image"
+        # category: cate_arr.sample
+    )
+end
+
+5.times do
+    Post.create(
+        title: Faker::App.name,
+        description: Faker::Lorem.sentence,
+        # link_url: Faker::Internet.url,
+        link_url: 'https://soundcloud.com/childish-gambino/this-is-america',
+        user_id: User.all.sample.id,
+        post_id: Post.all.sample.id, 
+        likes: rand(1..100),
+        category: "Audio"
+        # category: cate_arr.sample
     )
 end
 
