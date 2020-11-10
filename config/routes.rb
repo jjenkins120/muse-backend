@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :posts
   resources :users
+  resources :comments
 
   post '/users/sessions/login', to: 'users#login'
   get '/users/sessions/current_session', to: 'users#current_session'

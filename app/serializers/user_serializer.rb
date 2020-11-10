@@ -3,6 +3,8 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :posts 
 
+  has_many :comments
+
   has_many :inspirations
 
   has_many :followers

@@ -3,12 +3,12 @@ class PostSerializer < ActiveModel::Serializer
 
   has_many :inspired_users
 
+  has_many :comments
+
   belongs_to :user
 
   has_many :posts 
 
   belongs_to :post 
-
-  
 
 end
