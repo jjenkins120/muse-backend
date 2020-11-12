@@ -1,5 +1,5 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :user_id, :link_url, :post_id, :likes, :category
+  attributes :id, :title, :description, :user_id, :link_url, :post_id, :likes, :category, :created_at
 
   has_many :inspired_users
 
