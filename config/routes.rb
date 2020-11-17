@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   resources :comments
+  resources :messages
 
   post '/users/sessions/login', to: 'users#login'
   get '/users/sessions/current_session', to: 'users#current_session'
